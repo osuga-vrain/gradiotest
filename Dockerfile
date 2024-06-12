@@ -1,13 +1,10 @@
-FROM python:3.8-slim-buster
+FROM python:3.11-slim
 
-ENV PYTHONUNBUFFERED=1
-EXPOSE 7860
+ENV PYTHONUNBUFFERED 1
 
 WORKDIR /src
-COPY . .
+COPY src/ .
 
 RUN pip install gradio
 
-RUN chmod 744 ./start.sh
-
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["python", "app.py"]
