@@ -1,8 +1,9 @@
 import gradio as gr
+import os
 
 # あいさつの関数
 def greet(name):
-    return "Hello " + name + "!"
+    return str(os.getenv('TEST_VALUE'))
 
 # Interfaceの作成
 demo = gr.Interface(
