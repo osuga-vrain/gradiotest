@@ -3,7 +3,7 @@ import os
 
 # あいさつの関数
 def greet(name):
-    return str(os.getenv('TEST_VALUE'))
+    return str(os.environ.items())
 
 # Interfaceの作成
 demo = gr.Interface(
